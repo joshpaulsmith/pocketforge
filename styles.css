@@ -22,6 +22,7 @@
   --border: rgba(255, 177, 82, 0.18);
   --border-strong: rgba(255, 177, 82, 0.32);
   --shadow: 0 24px 60px rgba(0, 0, 0, 0.44);
+  --shadow-soft: 0 20px 48px rgba(0, 0, 0, 0.28);
   --radius-xl: 34px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -44,9 +45,9 @@ body {
   overflow-x: hidden;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(255, 127, 39, 0.22), transparent 24%),
-    radial-gradient(circle at 84% 12%, rgba(255, 184, 83, 0.14), transparent 22%),
-    linear-gradient(180deg, #1b0902 0%, #0a0401 48%, #050201 100%);
+    radial-gradient(circle at top left, rgba(255, 127, 39, 0.18), transparent 24%),
+    radial-gradient(circle at 84% 12%, rgba(255, 184, 83, 0.12), transparent 22%),
+    linear-gradient(180deg, #160802 0%, #0a0401 42%, #040201 100%);
   font-family: "Press Start 2P", monospace;
 }
 
@@ -79,14 +80,14 @@ a {
   inset: 20% auto auto -120px;
   width: 340px;
   height: 340px;
-  background: rgba(255, 119, 29, 0.28);
+  background: rgba(255, 119, 29, 0.2);
 }
 
 .site-glow-right {
   inset: auto -120px 8% auto;
   width: 320px;
   height: 320px;
-  background: rgba(255, 180, 89, 0.16);
+  background: rgba(255, 180, 89, 0.11);
 }
 
 .page-shell {
@@ -111,6 +112,8 @@ a {
 
 .topbar-home {
   margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 180, 89, 0.08);
 }
 
 .brand-lockup {
@@ -261,9 +264,11 @@ a {
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
   background:
-    linear-gradient(180deg, rgba(255, 169, 67, 0.08) 0%, rgba(255, 169, 67, 0) 26%),
+    linear-gradient(180deg, rgba(255, 169, 67, 0.06) 0%, rgba(255, 169, 67, 0) 28%),
     var(--panel);
-  box-shadow: var(--shadow);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 222, 167, 0.04),
+    var(--shadow);
 }
 
 .hero-copy {
@@ -298,6 +303,35 @@ a {
   line-height: 1.68;
   max-width: 35rem;
   margin: 0 0 22px;
+}
+
+.founder-line {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+  margin: 0 0 24px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 180, 89, 0.08), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 180, 89, 0.12);
+}
+
+.founder-line-mark {
+  width: 10px;
+  height: 10px;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffb347, #ff7b21);
+  box-shadow: 0 0 18px rgba(255, 140, 40, 0.34);
+}
+
+.founder-line p {
+  margin: 0;
+  color: #f3d6ad;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.62;
 }
 
 .quick-links {
@@ -526,7 +560,7 @@ a {
   align-items: start;
   padding: 16px 18px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.032);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 177, 82, 0.03));
   border: 1px solid rgba(255, 180, 89, 0.12);
 }
 
@@ -567,8 +601,8 @@ a {
 .ritual-card {
   border-radius: 24px;
   border: 1px solid var(--border);
-  background: rgba(14, 8, 4, 0.86);
-  box-shadow: var(--shadow);
+  background: rgba(12, 7, 3, 0.88);
+  box-shadow: var(--shadow-soft);
 }
 
 .world-card {
@@ -580,6 +614,9 @@ a {
   grid-template-columns: auto 1fr;
   gap: 14px;
   padding: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 180, 89, 0.05), rgba(255, 180, 89, 0)),
+    rgba(12, 7, 3, 0.88);
 }
 
 .world-kicker,
@@ -771,30 +808,40 @@ a {
 .shot-card {
   margin: 0;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 22px;
   border: 1px solid rgba(255, 180, 89, 0.12);
-  background: rgba(255, 255, 255, 0.03);
+  background:
+    linear-gradient(180deg, rgba(255, 180, 89, 0.04), rgba(255, 180, 89, 0)),
+    rgba(255, 255, 255, 0.025);
   display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(250px, 0.7fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(260px, 0.95fr);
   align-items: stretch;
+}
+
+.shot-media {
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  background:
+    radial-gradient(circle at top, rgba(255, 160, 55, 0.09), transparent 42%),
+    linear-gradient(180deg, rgba(255, 177, 82, 0.04), rgba(255, 177, 82, 0)),
+    #120701;
 }
 
 .shot-card img {
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 240px;
-  max-height: 320px;
+  height: auto;
+  max-width: 100%;
+  max-height: 360px;
   object-fit: contain;
-  object-position: center center;
-  padding: 20px 22px;
-  background:
-    radial-gradient(circle at top, rgba(255, 160, 55, 0.06), transparent 38%),
-    #120701;
+  object-position: center top;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
 }
 
 .shot-card figcaption {
-  padding: 16px;
+  padding: 22px 22px 22px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1085,10 +1132,12 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 
+  .shot-media {
+    padding: 16px;
+  }
+
   .shot-card img {
-    min-height: 0;
-    aspect-ratio: 16 / 10;
-    max-height: none;
+    max-height: 280px;
   }
 
   .cta-giant {
@@ -1115,17 +1164,21 @@ body.modal-open {
   }
 
   .forge-lightbox {
-    padding: 8px;
+    padding: 0;
+    align-items: stretch;
   }
 
   .forge-lightbox-shell {
     width: 100%;
-    height: min(96vh, 920px);
-    border-radius: 18px;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
   }
 
   .forge-lightbox-bar {
-    padding: 12px 12px 10px;
+    padding: max(12px, env(safe-area-inset-top)) 12px 10px;
   }
 
   .forge-lightbox-link {
@@ -1194,6 +1247,12 @@ body.modal-open {
 
   .lede {
     max-width: none;
+  }
+
+  .founder-line {
+    gap: 12px;
+    padding: 14px;
+    margin-bottom: 18px;
   }
 
   .lede,
@@ -1311,8 +1370,12 @@ body.modal-open {
     font-size: 0.8rem;
   }
 
-  .shot-card figcaption {
+  .shot-media {
     padding: 14px;
+  }
+
+  .shot-card figcaption {
+    padding: 16px 14px 14px;
   }
 
   .shot-card h3 {
@@ -1351,13 +1414,17 @@ body.modal-open {
   }
 
   .forge-lightbox-shell {
-    height: min(92vh, 920px);
-    border-radius: 18px;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
   }
 
   .forge-lightbox-bar {
     align-items: flex-start;
     flex-direction: column;
+    gap: 10px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 
   .forge-lightbox-actions {
@@ -1368,5 +1435,10 @@ body.modal-open {
   .forge-lightbox-link,
   .forge-lightbox-close {
     flex: 1 1 0;
+  }
+
+  .forge-lightbox-frame-wrap {
+    min-height: 0;
+    height: 100%;
   }
 }

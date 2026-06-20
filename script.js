@@ -6,6 +6,10 @@ const closeTargets = Array.from(document.querySelectorAll("[data-close-lightbox]
 
 let warmTimer = null;
 
+function shouldUseDirectLaunch() {
+  return window.matchMedia("(max-width: 820px)").matches;
+}
+
 function closeLightbox() {
   if (warmTimer) {
     window.clearTimeout(warmTimer);
@@ -31,6 +35,11 @@ function openLightbox() {
   document.body.classList.add("modal-open");
 
   warmTimer = window.setTimeout(() => {
+    if (shouldUseDirectLaunch()) {
+      window.location.href = "/play/";
+      return;
+    }
+
     frame.src = "/play/";
     overlay.hidden = true;
     lightbox.hidden = false;
