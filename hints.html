@@ -27,8 +27,8 @@
         <a class="brand-lockup brand-lockup-guide" href="/" aria-label="Back to PocketForge home">
           <img src="/assets/pocketforgelogo.png" alt="PocketForge" class="brand-icon brand-icon-guide" />
           <div class="brand-copy">
-            <span class="eyebrow">PocketForge Guide</span>
-            <h1>Hints & How To Play</h1>
+            <span class="eyebrow">PocketForge Field Manual</span>
+            <h1>Forge Field Manual</h1>
           </div>
         </a>
         <button class="media-link media-link-button" type="button" data-launch-game>Launch Game</button>
@@ -36,20 +36,24 @@
 
       <main class="guide-layout">
         <aside class="guide-panel guide-nav">
-          <p class="section-kicker">Quick navigation</p>
-          <a href="#what-is-it">What kind of game is this?</a>
-          <a href="#first-steps">Your first 5 minutes</a>
-          <a href="#core-loop">The core loop</a>
-          <a href="#systems">Why the systems matter</a>
-          <a href="#visual-tour">Visual screen tour</a>
-          <a href="#next-milestone">Next milestone guidance</a>
-          <a href="#purpose">What the game is trying to do</a>
+          <p class="section-kicker">Field manual</p>
+          <a href="#what-is-it">What this game is</a>
+          <a href="#first-steps">Opening moves</a>
+          <a href="#core-loop">Core loop</a>
+          <a href="#systems">Systems</a>
+          <a href="#visual-tour">Screen tour</a>
+          <a href="#next-milestone">Next milestone</a>
+          <a href="#purpose">Design purpose</a>
         </aside>
 
         <section class="guide-panel guide-content">
           <article class="guide-section guide-intro">
             <p class="guide-kicker">Pocket guide</p>
-            <h2>The short version</h2>
+            <h2>Read this like a smith's pocket handbook.</h2>
+            <p class="manual-lede">
+              PocketForge works best when you think in loops: tap for ore, upgrade your tools,
+              convert into bars, turn bars into crafted value, then prestige when the climb slows.
+            </p>
             <div class="guide-summary-grid">
               <div>
                 <h3>Tap</h3>
@@ -82,7 +86,7 @@
 
           <article id="first-steps" class="guide-section">
             <p class="guide-kicker">Start here</p>
-            <h2>Your first 5 minutes</h2>
+            <h2>Your opening moves</h2>
             <ul class="guide-list">
               <li>Tap the forge to earn Hammer Points and gather starting ore.</li>
               <li>Buy your early hammer upgrades as soon as you can afford them.</li>
@@ -149,7 +153,7 @@
 
           <article id="visual-tour" class="guide-section">
             <p class="guide-kicker">Visual tour</p>
-            <h2>How the major screens fit together</h2>
+            <h2>How the forge opens up screen by screen</h2>
             <div class="shot-grid">
               <figure class="shot-card">
                 <img src="/assets/guide-shots/next-milestone.png" alt="PocketForge next milestone screen" />
@@ -242,7 +246,7 @@
             </p>
             <button class="cta cta-primary cta-guide launch-button" type="button" data-launch-game>
               <span class="cta-label">Enter the Forge</span>
-              <span class="cta-meta">The live game auto-adjusts for desktop and mobile.</span>
+              <span class="cta-meta">Open the live build directly from the manual.</span>
             </button>
           </article>
         </section>
@@ -254,6 +258,9 @@
         <p class="forge-launch-kicker">PocketForge</p>
         <h2>warming the forge...</h2>
         <p>Loading the live build and tuning it for your screen.</p>
+        <div class="forge-launch-meter" aria-hidden="true">
+          <span class="forge-launch-meter-fill"></span>
+        </div>
       </div>
     </div>
 

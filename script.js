@@ -13,7 +13,10 @@ function closeLightbox() {
   }
 
   if (overlay) overlay.hidden = true;
-  if (lightbox) lightbox.hidden = true;
+  if (lightbox) {
+    lightbox.hidden = true;
+    lightbox.classList.remove("is-visible");
+  }
   if (frame) frame.src = "";
   document.body.classList.remove("modal-open");
 }
@@ -31,6 +34,9 @@ function openLightbox() {
     frame.src = "/play/";
     overlay.hidden = true;
     lightbox.hidden = false;
+    requestAnimationFrame(() => {
+      lightbox.classList.add("is-visible");
+    });
   }, 1100);
 }
 

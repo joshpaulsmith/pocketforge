@@ -288,16 +288,16 @@ a {
   font-size: clamp(1.5rem, 3.6vw, 3rem);
   line-height: 1.14;
   margin-bottom: 18px;
-  max-width: 11ch;
+  max-width: 10ch;
   color: var(--accent);
 }
 
 .lede {
   color: #f4debb;
   font-size: 1.06rem;
-  line-height: 1.75;
-  max-width: 44rem;
-  margin: 0 0 28px;
+  line-height: 1.68;
+  max-width: 35rem;
+  margin: 0 0 22px;
 }
 
 .quick-links {
@@ -448,8 +448,8 @@ a {
   margin: 0;
   color: var(--muted-soft);
   font-family: var(--font-ui);
-  font-size: 0.98rem;
-  line-height: 1.72;
+  font-size: 0.96rem;
+  line-height: 1.64;
 }
 
 .hero-preview {
@@ -692,6 +692,11 @@ a {
   gap: 18px;
 }
 
+.manual-lede {
+  margin: 0 0 18px !important;
+  color: #f4debb !important;
+}
+
 .guide-intro {
   background:
     linear-gradient(180deg, rgba(112, 242, 162, 0.07) 0%, rgba(112, 242, 162, 0) 26%),
@@ -770,7 +775,7 @@ a {
   border: 1px solid rgba(255, 180, 89, 0.12);
   background: rgba(255, 255, 255, 0.03);
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(250px, 0.7fr);
   align-items: stretch;
 }
 
@@ -778,10 +783,11 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 220px;
+  min-height: 240px;
+  max-height: 320px;
   object-fit: contain;
-  object-position: center top;
-  padding: 18px;
+  object-position: center center;
+  padding: 20px 22px;
   background:
     radial-gradient(circle at top, rgba(255, 160, 55, 0.06), transparent 38%),
     #120701;
@@ -835,6 +841,7 @@ a {
     rgba(16, 9, 4, 0.94);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
   text-align: center;
+  animation: forgeWarmRise 320ms ease-out;
 }
 
 .forge-launch-kicker {
@@ -858,6 +865,25 @@ a {
   font-family: var(--font-ui);
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.forge-launch-meter {
+  margin-top: 18px;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 180, 89, 0.12);
+}
+
+.forge-launch-meter-fill {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff7b21 0%, #ffb347 50%, #fff0c8 100%);
+  box-shadow: 0 0 18px rgba(255, 160, 55, 0.36);
+  animation: forgeWarmFill 1100ms ease-in-out forwards;
 }
 
 .forge-lightbox {
@@ -885,6 +911,7 @@ a {
   border: 1px solid rgba(255, 180, 89, 0.24);
   background: rgba(14, 8, 4, 0.98);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.54);
+  animation: forgeLightboxIn 260ms ease-out;
 }
 
 .forge-lightbox-bar {
@@ -935,6 +962,7 @@ a {
 .forge-lightbox-frame-wrap {
   min-height: 0;
   background: #050201;
+  position: relative;
 }
 
 .forge-lightbox-frame {
@@ -946,6 +974,39 @@ a {
 
 body.modal-open {
   overflow: hidden;
+}
+
+@keyframes forgeWarmRise {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes forgeWarmFill {
+  from {
+    width: 10%;
+    opacity: 0.7;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes forgeLightboxIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 1080px) {
@@ -1027,6 +1088,7 @@ body.modal-open {
   .shot-card img {
     min-height: 0;
     aspect-ratio: 16 / 10;
+    max-height: none;
   }
 
   .cta-giant {
@@ -1128,6 +1190,10 @@ body.modal-open {
     font-size: clamp(1.05rem, 8vw, 1.75rem);
     line-height: 1.18;
     margin-bottom: 14px;
+  }
+
+  .lede {
+    max-width: none;
   }
 
   .lede,
