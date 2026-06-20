@@ -62,7 +62,7 @@ a {
 }
 
 .site-noise {
-  opacity: 0.12;
+  opacity: 0.06;
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
@@ -72,7 +72,7 @@ a {
 
 .site-glow {
   filter: blur(60px);
-  opacity: 0.32;
+  opacity: 0.18;
 }
 
 .site-glow-left {
@@ -180,6 +180,8 @@ a {
 .brand-copy h1 {
   font-size: clamp(1.4rem, 3.4vw, 2.8rem);
   line-height: 1.02;
+  color: var(--accent);
+  text-shadow: 0 0 22px rgba(255, 123, 33, 0.18);
 }
 
 .brand-meta-row {
@@ -287,6 +289,7 @@ a {
   line-height: 1.14;
   margin-bottom: 18px;
   max-width: 11ch;
+  color: var(--accent);
 }
 
 .lede {
@@ -409,7 +412,7 @@ a {
 }
 
 .meta-strip-home {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 26px;
 }
 
@@ -546,7 +549,7 @@ a {
 
 .world-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
   margin-top: 22px;
 }
@@ -594,6 +597,7 @@ a {
   font-size: 1.02rem;
   line-height: 1.5;
   margin-bottom: 14px;
+  color: var(--accent);
 }
 
 .world-card p,
@@ -755,7 +759,7 @@ a {
 
 .shot-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
@@ -765,18 +769,29 @@ a {
   border-radius: 18px;
   border: 1px solid rgba(255, 180, 89, 0.12);
   background: rgba(255, 255, 255, 0.03);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  align-items: stretch;
 }
 
 .shot-card img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  background: #120701;
+  height: 100%;
+  min-height: 220px;
+  object-fit: contain;
+  object-position: center top;
+  padding: 18px;
+  background:
+    radial-gradient(circle at top, rgba(255, 160, 55, 0.06), transparent 38%),
+    #120701;
 }
 
 .shot-card figcaption {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .shot-card h3 {
@@ -861,11 +876,11 @@ a {
 .forge-lightbox-shell {
   position: relative;
   z-index: 1;
-  width: min(96vw, 1320px);
-  height: min(92vh, 920px);
+  width: min(96vw, 1440px);
+  height: min(94vh, 980px);
   display: grid;
   grid-template-rows: auto 1fr;
-  border-radius: 30px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 180, 89, 0.24);
   background: rgba(14, 8, 4, 0.98);
@@ -886,6 +901,7 @@ a {
   margin: 0;
   font-size: 1rem;
   line-height: 1.25;
+  color: var(--accent);
 }
 
 .forge-lightbox-actions {
@@ -936,8 +952,7 @@ body.modal-open {
   .hero-home,
   .guide-layout,
   .world-grid,
-  .ritual-strip,
-  .shot-grid {
+  .ritual-strip {
     grid-template-columns: 1fr;
   }
 
@@ -1005,6 +1020,15 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 
+  .shot-card {
+    grid-template-columns: 1fr;
+  }
+
+  .shot-card img {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+
   .cta-giant {
     width: 100%;
   }
@@ -1029,17 +1053,21 @@ body.modal-open {
   }
 
   .forge-lightbox {
-    padding: 12px;
+    padding: 8px;
   }
 
   .forge-lightbox-shell {
     width: 100%;
-    height: min(94vh, 920px);
-    border-radius: 22px;
+    height: min(96vh, 920px);
+    border-radius: 18px;
   }
 
   .forge-lightbox-bar {
-    padding: 14px;
+    padding: 12px 12px 10px;
+  }
+
+  .forge-lightbox-link {
+    display: none;
   }
 }
 
@@ -1201,7 +1229,6 @@ body.modal-open {
   }
 
   .world-grid,
-  .ritual-strip,
   .guide-content {
     gap: 14px;
   }
