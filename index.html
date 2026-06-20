@@ -6,12 +6,12 @@
     <title>PocketForge</title>
     <meta
       name="description"
-      content="PocketForge is a blacksmith fantasy idle game. Launch the web or mobile experience, track forge visitors, and follow Blacksmith Media."
+      content="PocketForge is an indie blacksmith idle game about momentum, mastery, collections, and building a forge worth returning to."
     />
     <meta property="og:title" content="PocketForge" />
     <meta
       property="og:description"
-      content="Forge, smelt, craft, collect, and prestige your way to mastery in PocketForge."
+      content="Mine, smelt, craft, collect, and return stronger each time you step back into the fire."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pocketforge.gg/" />
@@ -21,91 +21,152 @@
     <link rel="preload" href="/assets/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
+  <body class="site-home">
+    <div class="site-noise"></div>
+    <div class="site-glow site-glow-left"></div>
+    <div class="site-glow site-glow-right"></div>
+
     <div class="page-shell">
-      <header class="topbar">
+      <header class="topbar topbar-home">
         <a class="brand-lockup" href="/" aria-label="PocketForge home">
           <img src="/assets/pocketforgelogo.png" alt="PocketForge" class="brand-icon" />
           <div class="brand-copy">
             <span class="eyebrow">Blacksmith Idle Adventure</span>
             <h1>PocketForge</h1>
+            <div class="brand-meta-row">
+              <span class="beta-pill">Beta 1.0</span>
+              <span class="platform-pill">Browser + Mobile Ready</span>
+            </div>
           </div>
         </a>
-        <a class="media-link" href="https://blacksmithmedia.ca" target="_blank" rel="noreferrer">
-          by Blacksmith Media
-        </a>
+
+        <nav class="site-nav" aria-label="PocketForge site links">
+          <a class="nav-link" href="/hints.html">Hints & How To Play</a>
+          <a class="nav-link" href="https://blacksmithmedia.ca" target="_blank" rel="noreferrer">
+            Blacksmith Media
+          </a>
+        </nav>
       </header>
 
-      <main class="hero">
-        <section class="hero-panel hero-copy">
-          <p class="section-kicker">Forge your path</p>
-          <h2>Choose how you want to enter the forge.</h2>
+      <main class="hero hero-home">
+        <section class="hero-panel hero-copy hero-copy-home">
+          <p class="section-kicker">A forge worth returning to</p>
+          <h2>Mine ore, build your workshop, and turn repetition into mastery.</h2>
           <p class="lede">
-            Hammer ore, smelt bars, craft weapons, chase masterworks, and build your legacy.
-            PocketForge plays beautifully in browser and on phone-sized screens.
+            PocketForge is an indie idle game about living inside the rhythm of a blacksmith shop.
+            Every upgrade sharpens your loop. Every smelt feeds crafting. Every crafted piece pushes
+            you toward collections, rarities, and the next breakthrough.
           </p>
 
-          <div class="cta-grid">
-            <a class="cta cta-primary" href="/play/web/">
-              <span class="cta-label">Launch Web</span>
-              <span class="cta-meta">Desktop / laptop browser</span>
+          <div class="launch-cluster">
+            <a class="cta cta-primary cta-giant" href="/play/">
+              <span class="cta-eyebrow">Live build</span>
+              <span class="cta-label">Launch Game</span>
+              <span class="cta-meta">The game automatically adapts to desktop, tablet, and phone layouts.</span>
             </a>
-            <a class="cta cta-secondary" href="/play/mobile/">
-              <span class="cta-label">Launch Mobile</span>
-              <span class="cta-meta">Phone / tablet web build</span>
+            <a class="text-link text-link-bright" href="/hints.html">
+              New here? Read the forge guide.
             </a>
           </div>
 
-          <div class="meta-strip">
+          <div class="meta-strip meta-strip-home">
             <div class="meta-card">
-              <span class="meta-title">Live visitors</span>
-              <strong id="visitor-count">Loading...</strong>
+              <span class="meta-title">Forge visitors</span>
+              <strong id="visitor-count">Warming the forge...</strong>
             </div>
             <div class="meta-card">
-              <span class="meta-title">Current build</span>
-              <strong>Browser launch ready</strong>
+              <span class="meta-title">Current version</span>
+              <strong>Beta 1.0</strong>
             </div>
             <div class="meta-card">
-              <span class="meta-title">Studio</span>
+              <span class="meta-title">Built by</span>
               <strong>Blacksmith Media</strong>
             </div>
           </div>
+
+          <div class="indie-note">
+            <p>
+              This is a long-tail progression game. The joy is in building your own routine:
+              hammering faster, smelting smarter, chasing rare outcomes, and shaping a forge that
+              feels more alive every time you return.
+            </p>
+          </div>
         </section>
 
-        <section class="hero-panel hero-preview" aria-label="PocketForge game preview">
-          <div class="preview-frame">
+        <section class="hero-panel hero-preview hero-preview-home" aria-label="PocketForge game preview">
+          <div class="preview-frame preview-frame-home">
             <div class="forge-glow"></div>
             <img src="/assets/pocketforgelogo.png" alt="PocketForge key art" class="preview-art" />
+            <div class="version-stamp">
+              <span>Forge build</span>
+              <strong>Beta 1.0</strong>
+            </div>
           </div>
-          <div class="feature-list">
+
+          <div class="feature-list feature-list-home">
             <article>
               <span>01</span>
               <div>
-                <h3>Mine and upgrade</h3>
-                <p>Push hammer tiers, workshop milestones, furnace strength, and anvil power.</p>
+                <h3>Hammer for momentum</h3>
+                <p>Start with raw taps, then turn each tier into faster unlocks and stronger loops.</p>
               </div>
             </article>
             <article>
               <span>02</span>
               <div>
-                <h3>Smelt and craft</h3>
-                <p>Turn ore into bars, bars into weapons, and weapons into collections worth chasing.</p>
+                <h3>Smelt and specialize</h3>
+                <p>Ores become bars, bars become crafted gear, and crafted gear becomes long-term value.</p>
               </div>
             </article>
             <article>
               <span>03</span>
               <div>
-                <h3>Build your legacy</h3>
-                <p>Prestige, discover rare outcomes, and return stronger each time you re-enter the forge.</p>
+                <h3>Chase the memorable moments</h3>
+                <p>Collections, masterworks, milestones, and prestige are what turn a grind into a story.</p>
               </div>
             </article>
           </div>
         </section>
       </main>
 
-      <footer class="footer">
-        <p>PocketForge is forged by <a href="https://blacksmithmedia.ca" target="_blank" rel="noreferrer">Blacksmith Media</a>.</p>
-        <p class="footer-note">Web and mobile launches open the same live game build with device-tuned layouts.</p>
+      <section class="world-grid" aria-label="PocketForge overview">
+        <article class="world-card">
+          <p class="world-kicker">Core loop</p>
+          <h3>Ore → Bars → Crafting → Collections</h3>
+          <p>
+            PocketForge is designed so every system feeds the next one. Mining matters because
+            smelting matters. Smelting matters because crafting matters. Crafting matters because
+            collections and prestige give you reasons to keep going.
+          </p>
+        </article>
+        <article class="world-card">
+          <p class="world-kicker">Player fantasy</p>
+          <h3>Build a forge with personality</h3>
+          <p>
+            This is not just a resource clicker. It is about building a smithy that feels like your
+            place: stronger workshop, better furnace, rarer crafts, deeper legacy.
+          </p>
+        </article>
+        <article class="world-card">
+          <p class="world-kicker">Need direction?</p>
+          <h3>Follow the in-game milestone guidance</h3>
+          <p>
+            If you are unsure what to do next, the game surfaces your next meaningful milestone and
+            pushes you toward the most important upgrade or unlock.
+          </p>
+          <a class="text-link" href="/hints.html#next-milestone">See milestone guidance</a>
+        </article>
+      </section>
+
+      <footer class="footer footer-home">
+        <p>
+          PocketForge is forged by
+          <a href="https://blacksmithmedia.ca" target="_blank" rel="noreferrer">Blacksmith Media</a>.
+        </p>
+        <p class="footer-note">
+          Built for players who like routines, upgrades, and the kind of slow-burn progress that
+          becomes hard to put down.
+        </p>
       </footer>
     </div>
 

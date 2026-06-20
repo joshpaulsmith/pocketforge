@@ -14,7 +14,7 @@ async function updateVisitorCounter() {
     const response = await fetch(endpoint, { cache: "no-store" });
     const data = await response.json();
     if (typeof data.value === "number") {
-      el.textContent = new Intl.NumberFormat("en-CA").format(data.value);
+      el.textContent = `${new Intl.NumberFormat("en-CA").format(data.value)} visitors`;
       sessionStorage.setItem(SESSION_KEY, "1");
       return;
     }
@@ -22,7 +22,7 @@ async function updateVisitorCounter() {
     console.error("PocketForge counter failed", error);
   }
 
-  el.textContent = "Unavailable";
+  el.textContent = "Forge warming";
 }
 
 updateVisitorCounter();
