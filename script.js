@@ -1,28 +1,47 @@
-const COUNTER_NAMESPACE = "pocketforge.gg";
-const COUNTER_KEY = "visitors";
-const SESSION_KEY = "pocketforge-session-counted";
+const launchButtons = Array.from(document.querySelectorAll("[data-launch-game]"));
+const overlay = document.getElementById("forge-launch-overlay");
+const lightbox = document.getElementById("forge-lightbox");
+const frame = document.getElementById("forge-lightbox-frame");
+const closeTargets = Array.from(document.querySelectorAll("[data-close-lightbox]"));
 
-async function updateVisitorCounter() {
-  const el = document.getElementById("visitor-count");
-  if (!el) return;
+let warmTimer = null;
 
-  const endpoint = sessionStorage.getItem(SESSION_KEY)
-    ? `https://api.countapi.xyz/get/${COUNTER_NAMESPACE}/${COUNTER_KEY}`
-    : `https://api.countapi.xyz/hit/${COUNTER_NAMESPACE}/${COUNTER_KEY}`;
-
-  try {
-    const response = await fetch(endpoint, { cache: "no-store" });
-    const data = await response.json();
-    if (typeof data.value === "number") {
-      el.textContent = `${new Intl.NumberFormat("en-CA").format(data.value)} visitors`;
-      sessionStorage.setItem(SESSION_KEY, "1");
-      return;
-    }
-  } catch (error) {
-    console.error("PocketForge counter failed", error);
+function closeLightbox() {
+  if (warmTimer) {
+    window.clearTimeout(warmTimer);
+    warmTimer = null;
   }
 
-  el.textContent = "Forge warming";
+  if (overlay) overlay.hidden = true;
+  if (lightbox) lightbox.hidden = true;
+  if (frame) frame.src = "";
+  document.body.classList.remove("modal-open");
 }
 
-updateVisitorCounter();
+function openLightbox() {
+  if (!overlay || !lightbox || !frame) {
+    window.location.href = "/play/";
+    return;
+  }
+
+  overlay.hidden = false;
+  document.body.classList.add("modal-open");
+
+  warmTimer = window.setTimeout(() => {
+    frame.src = "/play/";
+    overlay.hidden = true;
+    lightbox.hidden = false;
+  }, 1100);
+}
+
+launchButtons.forEach((button) => {
+  button.addEventListener("click", openLightbox);
+});
+
+closeTargets.forEach((target) => {
+  target.addEventListener("click", closeLightbox);
+});
+
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeLightbox();
+});

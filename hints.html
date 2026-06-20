@@ -24,7 +24,7 @@
             <h1>Hints & How To Play</h1>
           </div>
         </a>
-        <a class="media-link" href="/play/">Launch Game</a>
+        <button class="media-link media-link-button" type="button" data-launch-game>Launch Game</button>
       </header>
 
       <main class="guide-layout">
@@ -34,6 +34,7 @@
           <a href="#first-steps">Your first 5 minutes</a>
           <a href="#core-loop">The core loop</a>
           <a href="#systems">Why the systems matter</a>
+          <a href="#visual-tour">Visual screen tour</a>
           <a href="#next-milestone">Next milestone guidance</a>
           <a href="#purpose">What the game is trying to do</a>
         </aside>
@@ -139,6 +140,76 @@
             </div>
           </article>
 
+          <article id="visual-tour" class="guide-section">
+            <p class="guide-kicker">Visual tour</p>
+            <h2>How the major screens fit together</h2>
+            <div class="shot-grid">
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/next-milestone.png" alt="PocketForge next milestone screen" />
+                <figcaption>
+                  <h3>Next Milestone</h3>
+                  <p>Use this when you need the game to tell you what major breakthrough matters most right now.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/upgrades-hammer.png" alt="PocketForge hammer upgrades screen" />
+                <figcaption>
+                  <h3>Upgrades</h3>
+                  <p>Hammer tiers, furnace power, anvil quality, apprentices, and workshop growth are your core engine.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/crafting-smelting.png" alt="PocketForge smelting and crafting screen" />
+                <figcaption>
+                  <h3>Smelting & Crafting</h3>
+                  <p>Turn ore into bars, bars into weapons, and weapons into value, collections, and rare outcomes.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/exchange-commodities.png" alt="PocketForge commodity exchange screen" />
+                <figcaption>
+                  <h3>Commodity Exchange</h3>
+                  <p>Track inventory value, watch prices, and convert your production into stronger long-term momentum.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/treasury.png" alt="PocketForge treasury screen" />
+                <figcaption>
+                  <h3>Treasury</h3>
+                  <p>The endgame wealth layer converts giant Hammer Point reserves into Perks and premium Gem progress.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/perks.png" alt="PocketForge perks screen" />
+                <figcaption>
+                  <h3>Perks</h3>
+                  <p>These permanent bonuses shape your whole account and make every future forge cycle stronger.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/relics.png" alt="PocketForge relics screen" />
+                <figcaption>
+                  <h3>Relics</h3>
+                  <p>Relics are rare, premium boosts. Save Gems and choose the ones that change how your forge feels.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/goals.png" alt="PocketForge goals screen" />
+                <figcaption>
+                  <h3>Goals</h3>
+                  <p>Contracts, challenges, glory, and collections give your sessions shape and your rewards rhythm.</p>
+                </figcaption>
+              </figure>
+              <figure class="shot-card">
+                <img src="/assets/guide-shots/prestige.png" alt="PocketForge prestige screen" />
+                <figcaption>
+                  <h3>Prestige</h3>
+                  <p>Rebirth is the long loop. When the run slows, prestige resets the climb but strengthens the next ascent.</p>
+                </figcaption>
+              </figure>
+            </div>
+          </article>
+
           <article id="next-milestone" class="guide-section">
             <p class="guide-kicker">If you are lost</p>
             <h2>Follow the next milestone guidance in-game.</h2>
@@ -162,13 +233,48 @@
               point is not just numbers going up. The point is building a forge that gradually
               becomes richer, faster, rarer, and more yours.
             </p>
-            <a class="cta cta-primary cta-guide" href="/play/">
+            <button class="cta cta-primary cta-guide launch-button" type="button" data-launch-game>
               <span class="cta-label">Enter the Forge</span>
               <span class="cta-meta">The live game auto-adjusts for desktop and mobile.</span>
-            </a>
+            </button>
           </article>
         </section>
       </main>
     </div>
+
+    <div class="forge-launch-overlay" id="forge-launch-overlay" hidden>
+      <div class="forge-launch-status" id="forge-launch-status">
+        <p class="forge-launch-kicker">PocketForge</p>
+        <h2>warming the forge...</h2>
+        <p>Loading the live build and tuning it for your screen.</p>
+      </div>
+    </div>
+
+    <div class="forge-lightbox" id="forge-lightbox" hidden>
+      <div class="forge-lightbox-backdrop" data-close-lightbox></div>
+      <div class="forge-lightbox-shell" role="dialog" aria-modal="true" aria-labelledby="forge-lightbox-title">
+        <div class="forge-lightbox-bar">
+          <div>
+            <p class="forge-launch-kicker">PocketForge</p>
+            <h2 id="forge-lightbox-title">Live Forge</h2>
+          </div>
+          <div class="forge-lightbox-actions">
+            <a class="forge-lightbox-link" href="/play/" target="_blank" rel="noreferrer">Open full page</a>
+            <button class="forge-lightbox-close" type="button" data-close-lightbox>Close</button>
+          </div>
+        </div>
+        <div class="forge-lightbox-frame-wrap">
+          <iframe
+            id="forge-lightbox-frame"
+            class="forge-lightbox-frame"
+            title="PocketForge game"
+            loading="lazy"
+            allow="fullscreen"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script src="/script.js" defer></script>
   </body>
 </html>

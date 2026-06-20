@@ -314,6 +314,14 @@ a {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+.quick-link-button,
+.media-link-button,
+.launch-button {
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+}
+
 .quick-link:hover {
   color: var(--text);
   border-color: rgba(255, 180, 89, 0.3);
@@ -341,6 +349,11 @@ a {
 .cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.launch-button {
+  text-align: left;
+  color: inherit;
 }
 
 .cta-primary {
@@ -739,11 +752,191 @@ a {
   border: 1px solid rgba(255, 180, 89, 0.12);
 }
 
+.shot-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.shot-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 180, 89, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.shot-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #120701;
+}
+
+.shot-card figcaption {
+  padding: 16px;
+}
+
+.shot-card h3 {
+  margin: 0 0 10px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.shot-card p {
+  margin: 0;
+}
+
+.forge-launch-overlay,
+.forge-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+}
+
+.forge-launch-overlay[hidden],
+.forge-lightbox[hidden] {
+  display: none;
+}
+
+.forge-launch-overlay {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at center, rgba(255, 150, 42, 0.16), transparent 28%),
+    rgba(5, 2, 1, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.forge-launch-status {
+  width: min(92vw, 520px);
+  padding: 30px 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 180, 89, 0.24);
+  background:
+    linear-gradient(180deg, rgba(255, 168, 64, 0.12) 0%, rgba(255, 168, 64, 0) 42%),
+    rgba(16, 9, 4, 0.94);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.forge-launch-kicker {
+  margin: 0 0 10px;
+  color: var(--accent-green);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.forge-launch-status h2 {
+  margin: 0 0 12px;
+  font-size: clamp(1.15rem, 4vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.forge-launch-status p:last-child {
+  margin: 0;
+  color: var(--muted-soft);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.forge-lightbox {
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.forge-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 2, 1, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+.forge-lightbox-shell {
+  position: relative;
+  z-index: 1;
+  width: min(96vw, 1320px);
+  height: min(92vh, 920px);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 180, 89, 0.24);
+  background: rgba(14, 8, 4, 0.98);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.54);
+}
+
+.forge-lightbox-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255, 180, 89, 0.12);
+  background: linear-gradient(180deg, rgba(255, 168, 64, 0.08), rgba(255, 168, 64, 0));
+}
+
+.forge-lightbox-bar h2 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.forge-lightbox-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.forge-lightbox-link,
+.forge-lightbox-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 180, 89, 0.18);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.forge-lightbox-close {
+  background: linear-gradient(135deg, rgba(255, 126, 34, 0.18), rgba(255, 196, 97, 0.1));
+}
+
+.forge-lightbox-frame-wrap {
+  min-height: 0;
+  background: #050201;
+}
+
+.forge-lightbox-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #050201;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
 @media (max-width: 1080px) {
   .hero-home,
   .guide-layout,
   .world-grid,
-  .ritual-strip {
+  .ritual-strip,
+  .shot-grid {
     grid-template-columns: 1fr;
   }
 
@@ -832,6 +1025,20 @@ a {
 
   .ritual-card {
     padding: 18px;
+  }
+
+  .forge-lightbox {
+    padding: 12px;
+  }
+
+  .forge-lightbox-shell {
+    width: 100%;
+    height: min(94vh, 920px);
+    border-radius: 22px;
+  }
+
+  .forge-lightbox-bar {
+    padding: 14px;
   }
 }
 
@@ -1010,6 +1217,14 @@ a {
     font-size: 0.8rem;
   }
 
+  .shot-card figcaption {
+    padding: 14px;
+  }
+
+  .shot-card h3 {
+    font-size: 0.84rem;
+  }
+
   .guide-summary-grid div,
   .system-grid div {
     padding: 14px;
@@ -1034,5 +1249,30 @@ a {
   .footer p {
     font-size: 0.74rem;
     line-height: 1.5;
+  }
+
+  .forge-launch-status {
+    padding: 24px 18px;
+    border-radius: 22px;
+  }
+
+  .forge-lightbox-shell {
+    height: min(92vh, 920px);
+    border-radius: 18px;
+  }
+
+  .forge-lightbox-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .forge-lightbox-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .forge-lightbox-link,
+  .forge-lightbox-close {
+    flex: 1 1 0;
   }
 }

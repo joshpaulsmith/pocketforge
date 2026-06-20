@@ -61,15 +61,15 @@
           <div class="quick-links" aria-label="PocketForge highlights">
             <a class="quick-link" href="#core-pillars">Why it works</a>
             <a class="quick-link" href="/hints.html">How to play</a>
-            <a class="quick-link" href="/play/">Play instantly</a>
+            <button class="quick-link quick-link-button" type="button" data-launch-game>Play instantly</button>
           </div>
 
           <div class="launch-cluster">
-            <a class="cta cta-primary cta-giant" href="/play/">
+            <button class="cta cta-primary cta-giant launch-button" type="button" data-launch-game>
               <span class="cta-eyebrow">Live build</span>
               <span class="cta-label">Launch Game</span>
-              <span class="cta-meta">The game automatically adapts to desktop, tablet, and phone layouts.</span>
-            </a>
+              <span class="cta-meta">Warming the forge in a focused lightbox, then loading the live adaptive build.</span>
+            </button>
             <a class="text-link text-link-bright" href="/hints.html">
               New here? Read the forge guide.
             </a>
@@ -77,12 +77,12 @@
 
           <div class="meta-strip meta-strip-home">
             <div class="meta-card">
-              <span class="meta-title">Forge visitors</span>
-              <strong id="visitor-count">Warming the forge...</strong>
+              <span class="meta-title">Forge build</span>
+              <strong>Beta 1.0 live</strong>
             </div>
             <div class="meta-card">
-              <span class="meta-title">Current version</span>
-              <strong>Beta 1.0</strong>
+              <span class="meta-title">Launch flow</span>
+              <strong>Lightbox + adaptive game</strong>
             </div>
             <div class="meta-card">
               <span class="meta-title">Built by</span>
@@ -198,6 +198,39 @@
           becomes hard to put down.
         </p>
       </footer>
+    </div>
+
+    <div class="forge-launch-overlay" id="forge-launch-overlay" hidden>
+      <div class="forge-launch-status" id="forge-launch-status">
+        <p class="forge-launch-kicker">PocketForge</p>
+        <h2>warming the forge...</h2>
+        <p>Loading the live build and tuning it for your screen.</p>
+      </div>
+    </div>
+
+    <div class="forge-lightbox" id="forge-lightbox" hidden>
+      <div class="forge-lightbox-backdrop" data-close-lightbox></div>
+      <div class="forge-lightbox-shell" role="dialog" aria-modal="true" aria-labelledby="forge-lightbox-title">
+        <div class="forge-lightbox-bar">
+          <div>
+            <p class="forge-launch-kicker">PocketForge</p>
+            <h2 id="forge-lightbox-title">Live Forge</h2>
+          </div>
+          <div class="forge-lightbox-actions">
+            <a class="forge-lightbox-link" href="/play/" target="_blank" rel="noreferrer">Open full page</a>
+            <button class="forge-lightbox-close" type="button" data-close-lightbox>Close</button>
+          </div>
+        </div>
+        <div class="forge-lightbox-frame-wrap">
+          <iframe
+            id="forge-lightbox-frame"
+            class="forge-lightbox-frame"
+            title="PocketForge game"
+            loading="lazy"
+            allow="fullscreen"
+          ></iframe>
+        </div>
+      </div>
     </div>
 
     <script src="/script.js" defer></script>
