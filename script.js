@@ -10,7 +10,7 @@ function shouldUseDirectLaunch() {
   return window.matchMedia("(max-width: 820px)").matches;
 }
 
-function closeLightbox() {
+function resetTransientLaunchUi() {
   if (warmTimer) {
     window.clearTimeout(warmTimer);
     warmTimer = null;
@@ -25,6 +25,10 @@ function closeLightbox() {
   document.body.classList.remove("modal-open");
 }
 
+function closeLightbox() {
+  resetTransientLaunchUi();
+}
+
 function openLightbox() {
   if (!overlay || !lightbox || !frame) {
     window.location.href = "/play/";
@@ -36,7 +40,8 @@ function openLightbox() {
 
   warmTimer = window.setTimeout(() => {
     if (shouldUseDirectLaunch()) {
-      window.location.href = "/play/";
+      resetTransientLaunchUi();
+      window.location.assign("/play/");
       return;
     }
 
@@ -59,4 +64,12 @@ closeTargets.forEach((target) => {
 
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") closeLightbox();
+});
+
+window.addEventListener("pageshow", () => {
+  resetTransientLaunchUi();
+});
+
+window.addEventListener("load", () => {
+  resetTransientLaunchUi();
 });
