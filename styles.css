@@ -6,6 +6,7 @@
 
 :root {
   color-scheme: dark;
+  --font-ui: "Alegreya Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --bg: #070301;
   --bg-2: #130702;
   --panel: rgba(18, 10, 4, 0.9);
@@ -164,7 +165,7 @@ a {
 .platform-pill,
 .beta-pill,
 .version-stamp span {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
 }
 
 .eyebrow {
@@ -311,7 +312,7 @@ a {
   color: var(--muted-soft);
   text-decoration: none;
   font-size: 0.84rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
 }
 
 .quick-link-button,
@@ -395,7 +396,7 @@ a {
   color: var(--accent);
   text-decoration: none;
   font-size: 0.92rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
 }
 
 .text-link-bright {
@@ -443,7 +444,7 @@ a {
 .indie-note p {
   margin: 0;
   color: var(--muted-soft);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.98rem;
   line-height: 1.72;
 }
@@ -824,7 +825,7 @@ a {
 .forge-launch-kicker {
   margin: 0 0 10px;
   color: var(--accent-green);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
   font-size: 0.84rem;
   text-transform: uppercase;
   letter-spacing: 0.18em;
@@ -839,7 +840,7 @@ a {
 .forge-launch-status p:last-child {
   margin: 0;
   color: var(--muted-soft);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
   font-size: 1rem;
   line-height: 1.6;
 }
