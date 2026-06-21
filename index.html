@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@400;500;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="preload" href="/assets/PressStart2P-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -72,21 +72,16 @@
             </p>
           </div>
 
-          <div class="quick-links" aria-label="PocketForge highlights">
-            <a class="quick-link" href="#core-pillars">Why it works</a>
-            <a class="quick-link" href="/hints.html">How to play</a>
-            <button class="quick-link quick-link-button" type="button" data-launch-game>Play instantly</button>
-          </div>
-
           <div class="launch-cluster">
             <button class="cta cta-primary cta-giant launch-button" type="button" data-launch-game>
               <span class="cta-eyebrow">Live build</span>
               <span class="cta-label">Launch Game</span>
-              <span class="cta-meta">Launch instantly in-browser. The forge adapts itself for desktop, tablet, and phone.</span>
+              <span class="cta-meta">Open the live forge instantly. PocketForge adapts itself for desktop, tablet, and phone automatically.</span>
             </button>
-            <a class="text-link text-link-bright" href="/hints.html">
-              New here? Read the field manual.
-            </a>
+            <div class="launch-support">
+              <a class="text-link text-link-bright" href="/hints.html">Read the field manual</a>
+              <a class="text-link" href="#core-pillars">See why players stay</a>
+            </div>
           </div>
 
           <div class="meta-strip meta-strip-home">
@@ -95,16 +90,23 @@
               <strong>Beta 1.0 live</strong>
             </div>
             <div class="meta-card">
-              <span class="meta-title">Launch flow</span>
-              <strong>Lightbox + adaptive game</strong>
+              <span class="meta-title">Play style</span>
+              <strong>One launch, any screen</strong>
             </div>
           </div>
-
-          <div class="indie-note">
-            <p>
-              The appeal is simple: build a forge rhythm that gets faster, rarer, and more personal
-              every time you come back.
-            </p>
+          <div class="home-pillars">
+            <article>
+              <span>Momentum</span>
+              <p>Every tap feeds the next stronger loop.</p>
+            </article>
+            <article>
+              <span>Rarity</span>
+              <p>Masterworks, collections, and milestones create chase.</p>
+            </article>
+            <article>
+              <span>Legacy</span>
+              <p>Prestige turns every run into a stronger return.</p>
+            </article>
           </div>
         </section>
 
@@ -165,37 +167,6 @@
         </article>
       </section>
 
-      <section class="video-showcase" aria-label="PocketForge gameplay video">
-        <article class="video-card video-copy">
-          <p class="world-kicker">See the forge in motion</p>
-          <h3>From first tap to long-term momentum.</h3>
-          <p>
-            Watch a real PocketForge session to get a feel for the rhythm: hammering for ore,
-            pushing upgrades, navigating the forge, and building toward the next milestone.
-          </p>
-          <p>
-            If you would rather learn first, the field manual breaks down Hammer Points, Perks,
-            Gems, Collections, Relics, and Prestige in plain language.
-          </p>
-          <div class="quick-links quick-links-inline">
-            <button class="quick-link quick-link-button" type="button" data-launch-game>Launch the live forge</button>
-            <a class="quick-link" href="/hints.html">Open the field manual</a>
-          </div>
-        </article>
-        <article class="video-card video-frame-card">
-          <video
-            class="video-player"
-            controls
-            preload="metadata"
-            playsinline
-            poster="/assets/pocketforgelogo.png"
-          >
-            <source src="/assets/media/pocketforge-gameplay.mov" type="video/quicktime" />
-            Your browser does not support embedded PocketForge gameplay video.
-          </video>
-        </article>
-      </section>
-
       <section class="ritual-strip" aria-label="PocketForge player promise">
         <article class="ritual-card">
           <span class="ritual-index">01</span>
@@ -252,7 +223,6 @@
             <h2 id="forge-lightbox-title">Live Forge</h2>
           </div>
           <div class="forge-lightbox-actions">
-            <a class="forge-lightbox-link" href="/play/" target="_blank" rel="noreferrer">Open full page</a>
             <button class="forge-lightbox-close" type="button" data-close-lightbox>Close</button>
           </div>
         </div>

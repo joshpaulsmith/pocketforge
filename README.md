@@ -27,10 +27,6 @@ You can override that with:
 GAME_ROOT=/absolute/path/to/Forging-main bash ./scripts/sync-play-build.sh
 ```
 
-## Visitor counter
-
-The homepage uses [CountAPI](https://countapi.xyz/) to display a lightweight public visitor count.
-
 ## Domain
 
 This repo includes:

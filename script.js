@@ -70,6 +70,20 @@ window.addEventListener("pageshow", () => {
   resetTransientLaunchUi();
 });
 
+window.addEventListener("pagehide", () => {
+  resetTransientLaunchUi();
+});
+
+window.addEventListener("popstate", () => {
+  resetTransientLaunchUi();
+});
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") {
+    resetTransientLaunchUi();
+  }
+});
+
 window.addEventListener("load", () => {
   resetTransientLaunchUi();
 });
