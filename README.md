@@ -17,6 +17,10 @@ The launcher can rebuild and copy the current game from the sibling development 
 bash ./scripts/sync-play-build.sh
 ```
 
+The sync keeps older hashed `/play/assets/*` files in place so brief GitHub Pages
+or browser cache lag does not blank the launcher while a stale `play/index.html`
+is still in circulation.
+
 By default it expects the game repo at:
 
 `/Users/joshsmith/Developer/Forging-main`

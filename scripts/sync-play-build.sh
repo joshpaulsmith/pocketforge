@@ -16,7 +16,6 @@ cd "$GAME_ROOT"
 bash ./scripts/vite-runner.sh build --base=/play/ --outDir "$TMP_DIR"
 
 echo "Refreshing launcher play build..."
-rm -rf "$OUT_DIR"
 mkdir -p "$OUT_DIR"
 cp -R "$TMP_DIR"/. "$OUT_DIR"/
 
