@@ -1007,7 +1007,7 @@ a {
 .forge-lightbox {
   display: grid;
   place-items: center;
-  padding: 22px;
+  padding: 18px;
 }
 
 .forge-lightbox-backdrop {
@@ -1021,7 +1021,7 @@ a {
   position: relative;
   z-index: 1;
   width: min(96vw, 1440px);
-  height: min(94vh, 980px);
+  height: min(96dvh, 1000px);
   display: grid;
   grid-template-rows: auto 1fr;
   border-radius: 24px;
@@ -1080,6 +1080,8 @@ a {
   min-height: 0;
   background: #050201;
   position: relative;
+  padding-bottom: 12px;
+  box-sizing: border-box;
 }
 
 .forge-lightbox-frame {
