@@ -5,32 +5,24 @@
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("/assets/Fraunces-500.ttf") format("truetype");
+  font-family: "Newsreader";
+  src: url("/assets/Newsreader-400.ttf") format("truetype");
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Fraunces";
-  src: url("/assets/Fraunces-600.ttf") format("truetype");
+  font-family: "Newsreader";
+  src: url("/assets/Newsreader-600.ttf") format("truetype");
   font-style: normal;
   font-weight: 600;
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Fraunces";
-  src: url("/assets/Fraunces-700.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
 :root {
   color-scheme: dark;
-  --font-ui: "Fraunces", Georgia, serif;
+  --font-ui: "Newsreader", "Iowan Old Style", "Palatino Linotype", serif;
   --bg: #070301;
   --bg-2: #130702;
   --panel: rgba(18, 10, 4, 0.9);
@@ -156,6 +148,10 @@ a {
   align-items: flex-start;
 }
 
+.brand-copy {
+  min-width: 0;
+}
+
 .brand-icon {
   width: 86px;
   height: 86px;
@@ -200,6 +196,18 @@ a {
 .version-stamp span {
   font-family: var(--font-ui);
   font-optical-sizing: auto;
+}
+
+.eyebrow,
+.section-kicker,
+.cta-eyebrow,
+.meta-title,
+.world-kicker,
+.guide-kicker,
+.platform-pill,
+.beta-pill,
+.version-stamp span {
+  font-weight: 600;
 }
 
 .eyebrow {
@@ -1368,7 +1376,7 @@ body.modal-open {
   }
 
   .brand-copy h1 {
-    font-size: clamp(1.2rem, 10vw, 2rem);
+    font-size: clamp(1.05rem, 7.6vw, 1.7rem);
     line-height: 1.06;
   }
 
