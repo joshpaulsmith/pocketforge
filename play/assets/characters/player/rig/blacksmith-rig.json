@@ -1,0 +1,334 @@
+{
+  "canvas": {
+    "width": 128,
+    "height": 128
+  },
+  "sourceCharacter": "assets/characters/player/blacksmith-reference.png",
+  "defaultHammer": {
+    "tier": 1,
+    "name": "Twig Hammer",
+    "asset": "assets/equipment/hammers/01-twig-mallet.png"
+  },
+  "layers": [
+    "body",
+    "back_arm",
+    "hammer",
+    "front_arm",
+    "hands",
+    "effects"
+  ],
+  "frameCount": 8,
+  "impactFrame": 6,
+  "hammerIsSwappable": true,
+  "note": "The hammer is a separate layer using a fixed hand pivot per frame. Future hammer skins should replace only the hammer asset and reuse this metadata.",
+  "frames": [
+    {
+      "name": "idle",
+      "durationMs": 56,
+      "body": {
+        "x": 18,
+        "y": 22,
+        "scaleY": 1
+      },
+      "pivot": {
+        "x": 62,
+        "y": 72
+      },
+      "hammer": {
+        "x": 41,
+        "y": 83,
+        "rotate": -20
+      },
+      "frontArm": {
+        "x": 55,
+        "y": 64,
+        "rotate": 26,
+        "length": 22
+      },
+      "backArm": {
+        "x": 56,
+        "y": 64,
+        "rotate": 35,
+        "length": 20
+      },
+      "frontHand": {
+        "x": 62,
+        "y": 72
+      },
+      "backHand": {
+        "x": 58,
+        "y": 69
+      }
+    },
+    {
+      "name": "prepare",
+      "durationMs": 56,
+      "body": {
+        "x": 18,
+        "y": 22,
+        "scaleY": 1
+      },
+      "pivot": {
+        "x": 64,
+        "y": 69
+      },
+      "hammer": {
+        "x": 51,
+        "y": 61,
+        "rotate": -58
+      },
+      "frontArm": {
+        "x": 56,
+        "y": 61,
+        "rotate": 4,
+        "length": 24
+      },
+      "backArm": {
+        "x": 55,
+        "y": 62,
+        "rotate": 12,
+        "length": 22
+      },
+      "frontHand": {
+        "x": 64,
+        "y": 69
+      },
+      "backHand": {
+        "x": 60,
+        "y": 66
+      }
+    },
+    {
+      "name": "raise-twig-hammer",
+      "durationMs": 60,
+      "body": {
+        "x": 19,
+        "y": 21,
+        "scaleY": 1
+      },
+      "pivot": {
+        "x": 65,
+        "y": 58
+      },
+      "hammer": {
+        "x": 57,
+        "y": 42,
+        "rotate": -94
+      },
+      "frontArm": {
+        "x": 56,
+        "y": 57,
+        "rotate": -24,
+        "length": 25
+      },
+      "backArm": {
+        "x": 55,
+        "y": 59,
+        "rotate": -16,
+        "length": 22
+      },
+      "frontHand": {
+        "x": 65,
+        "y": 58
+      },
+      "backHand": {
+        "x": 61,
+        "y": 61
+      }
+    },
+    {
+      "name": "anticipation",
+      "durationMs": 64,
+      "body": {
+        "x": 20,
+        "y": 21,
+        "scaleY": 1
+      },
+      "pivot": {
+        "x": 65,
+        "y": 53
+      },
+      "hammer": {
+        "x": 47,
+        "y": 36,
+        "rotate": -130
+      },
+      "frontArm": {
+        "x": 55,
+        "y": 56,
+        "rotate": -45,
+        "length": 27
+      },
+      "backArm": {
+        "x": 54,
+        "y": 58,
+        "rotate": -36,
+        "length": 24
+      },
+      "frontHand": {
+        "x": 65,
+        "y": 53
+      },
+      "backHand": {
+        "x": 61,
+        "y": 57
+      }
+    },
+    {
+      "name": "downswing",
+      "durationMs": 42,
+      "body": {
+        "x": 17,
+        "y": 24,
+        "scaleY": 0.99
+      },
+      "pivot": {
+        "x": 60,
+        "y": 67
+      },
+      "hammer": {
+        "x": 42,
+        "y": 65,
+        "rotate": -48
+      },
+      "frontArm": {
+        "x": 54,
+        "y": 62,
+        "rotate": 16,
+        "length": 24
+      },
+      "backArm": {
+        "x": 53,
+        "y": 62,
+        "rotate": 23,
+        "length": 22
+      },
+      "frontHand": {
+        "x": 60,
+        "y": 67
+      },
+      "backHand": {
+        "x": 56,
+        "y": 65
+      }
+    },
+    {
+      "name": "impact",
+      "durationMs": 50,
+      "body": {
+        "x": 15,
+        "y": 27,
+        "scaleY": 0.95
+      },
+      "pivot": {
+        "x": 57,
+        "y": 75
+      },
+      "hammer": {
+        "x": 34,
+        "y": 83,
+        "rotate": -12
+      },
+      "frontArm": {
+        "x": 51,
+        "y": 66,
+        "rotate": 36,
+        "length": 25
+      },
+      "backArm": {
+        "x": 50,
+        "y": 67,
+        "rotate": 42,
+        "length": 23
+      },
+      "frontHand": {
+        "x": 57,
+        "y": 75
+      },
+      "backHand": {
+        "x": 53,
+        "y": 73
+      },
+      "impact": {
+        "x": 36,
+        "y": 84
+      }
+    },
+    {
+      "name": "follow-through",
+      "durationMs": 58,
+      "body": {
+        "x": 17,
+        "y": 24,
+        "scaleY": 0.99
+      },
+      "pivot": {
+        "x": 59,
+        "y": 78
+      },
+      "hammer": {
+        "x": 39,
+        "y": 92,
+        "rotate": 8
+      },
+      "frontArm": {
+        "x": 52,
+        "y": 67,
+        "rotate": 44,
+        "length": 24
+      },
+      "backArm": {
+        "x": 51,
+        "y": 67,
+        "rotate": 50,
+        "length": 22
+      },
+      "frontHand": {
+        "x": 59,
+        "y": 78
+      },
+      "backHand": {
+        "x": 55,
+        "y": 76
+      }
+    },
+    {
+      "name": "recover-to-idle",
+      "durationMs": 64,
+      "body": {
+        "x": 18,
+        "y": 22,
+        "scaleY": 1
+      },
+      "pivot": {
+        "x": 62,
+        "y": 72
+      },
+      "hammer": {
+        "x": 41,
+        "y": 83,
+        "rotate": -20
+      },
+      "frontArm": {
+        "x": 55,
+        "y": 64,
+        "rotate": 26,
+        "length": 22
+      },
+      "backArm": {
+        "x": 56,
+        "y": 64,
+        "rotate": 35,
+        "length": 20
+      },
+      "frontHand": {
+        "x": 62,
+        "y": 72
+      },
+      "backHand": {
+        "x": 58,
+        "y": 69
+      }
+    }
+  ]
+}
